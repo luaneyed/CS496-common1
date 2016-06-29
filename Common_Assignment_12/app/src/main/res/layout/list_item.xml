@@ -26,7 +26,25 @@
         android:paddingBottom="2dip"
         android:textColor="#acacac" />
 
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:textSize="0sp" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:textSize="0sp" />
+
     <!-- Mobile number label -->
+
     <TextView
         android:id="@+id/mobile"
         android:layout_width="wrap_content"
@@ -35,5 +53,24 @@
         android:text="Mobile: "
         android:textColor="#5d5d5d"
         android:textStyle="bold" />
+
+
+    <!--android:text="Mobile: "-->
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:textSize="0sp" />
+
+    <TextView
+        android:id="@+id/office"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:textSize="0sp" />
+
 
 </LinearLayout>
