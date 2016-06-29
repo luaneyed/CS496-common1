@@ -16,6 +16,7 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -99,6 +100,10 @@ public class PhoneBook extends Fragment {
                     contact.put(TAG_NAME, name);
                     contact.put(TAG_EMAIL, email);
                     contact.put(TAG_PHONE_M, mobile);
+                    contact.put(TAG_PHONE_H, home);
+                    contact.put(TAG_PHONE_O, office);
+                    contact.put(TAG_ADDRESS, address);
+                    contact.put(TAG_GENDER, gender);
 
                     contactList.add(contact);
                 }
@@ -112,8 +117,8 @@ public class PhoneBook extends Fragment {
         SimpleAdapter adapter = new SimpleAdapter(
                 getActivity(), contactList,
                 R.layout.list_item, new String[] { TAG_NAME, TAG_EMAIL,
-                TAG_PHONE_M }, new int[] { R.id.name,
-                R.id.email, R.id.mobile });
+                TAG_PHONE_M, TAG_ADDRESS, TAG_GENDER, TAG_PHONE_H, TAG_PHONE_O }, new int[] { R.id.name,
+                R.id.email, R.id.mobile, R.id.address, R.id.gender, R.id.home, R.id.office});
 
         listView.setAdapter(adapter);
 
@@ -128,10 +133,14 @@ public class PhoneBook extends Fragment {
                 // getting values from selected ListItem
                 String name = ((TextView) view.findViewById(R.id.name))
                         .getText().toString();
-                String email = ((TextView) view.findViewById(R.id.email))
+                String email = "Email: "+((TextView) view.findViewById(R.id.email))
                         .getText().toString();
-                String mobile = ((TextView) view.findViewById(R.id.mobile))
+                String mobile = "Mobile: " + ((TextView) view.findViewById(R.id.mobile))
                         .getText().toString();
+                String gender = "Gender: "+((TextView) view.findViewById(R.id.gender)).getText().toString();
+                String address = "Address: "+((TextView) view.findViewById(R.id.address)).getText().toString();
+                String home = "Home: "+((TextView) view.findViewById(R.id.home)).getText().toString();
+                String office = "Office: " +((TextView) view.findViewById(R.id.office)).getText().toString();
 
                 // Starting single contact activity
                 Intent in = new Intent(getActivity().getApplicationContext(),
@@ -139,6 +148,10 @@ public class PhoneBook extends Fragment {
                 in.putExtra(TAG_NAME, name);
                 in.putExtra(TAG_EMAIL, email);
                 in.putExtra(TAG_PHONE_M, mobile);
+                in.putExtra(TAG_ADDRESS,address);
+                in.putExtra(TAG_GENDER, gender);
+                in.putExtra(TAG_PHONE_H, home);
+                in.putExtra(TAG_PHONE_O, office);
                 startActivity(in);
 
             }
