@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
         tabsviewPager.setAdapter(mTabsAdapter);
 
-        //getSupportActionBar().setHomeButtonEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(false);
         getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         //getSupportActionBar().setDisplayShowHomeEnabled(false);

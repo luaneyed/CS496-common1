@@ -42,18 +42,14 @@ public class Image_Adapter extends PagerAdapter{
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
-        int padding = 10;//context.getResources().getDimensionPixelSize(R.dimen.padding_medium);
+        int padding = 10;
         imageView.setPadding(padding, padding, padding, padding);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-
-        //Bitmap origin = BitmapFactory.decodeResource(context.getResources(),  GalImages[position]);
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(context.getResources(), GalImages[position], options);
         int scale = 1;
-        //int[] maxTextureSize = new int[1];
-        //GLES20.glGetIntegerv(GLES20.GL_MAX_TEXTURE_SIZE, maxTextureSize, 0);
 
         DisplayMetrics displaymetrics = new DisplayMetrics();
         ((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
@@ -67,9 +63,6 @@ public class Image_Adapter extends PagerAdapter{
         Bitmap resized = BitmapFactory.decodeResource(context.getResources(), GalImages[position], o2);
 
         imageView.setImageBitmap(resized);
-        //imageView.setImageResource(GalImages[position] );
-
-        //mAttacher = new PhotoViewAttacher(imageView);
         ((ViewPager) container).addView(imageView, 0);
         return imageView;
     }

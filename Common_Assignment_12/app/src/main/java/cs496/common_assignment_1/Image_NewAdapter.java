@@ -30,7 +30,6 @@ public class Image_NewAdapter extends SimpleAdapter{
     Image_NewAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to){
         super(context, data, resource, from, to);
         this.context=context;
-        //SimpleAdapter(context, data, resource, from, to);
     }
 
     @Override
@@ -53,8 +52,6 @@ public class Image_NewAdapter extends SimpleAdapter{
             Bitmap resized = BitmapFactory.decodeResource(context.getResources(), Integer.parseInt(value), o2);
 
             v.setImageBitmap(resized);
-
-            //v.setImageResource(Integer.parseInt(value));
         } catch (NumberFormatException nfe) {
             v.setImageURI(Uri.parse(value));
         }
