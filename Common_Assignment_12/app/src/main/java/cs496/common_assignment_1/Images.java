@@ -32,21 +32,51 @@ public class Images extends Fragment {
     private static final String TAG_NAME = "name";
     private static final String TAG_IMAGE = "image";
 
-    private static final int PICTURE_NUM = 3;
-
     // Array of strings storing country names
-    String[] names = new String[] {
+    static String[] names = new String[] {
             "SOUL COOKE",
             "NATURE",
-            "OLD BOY"
+            "OLD BOY",
+            "넙죽이",
+            "KAIST",
+            "WallPaper",
+            "Kakao Talk",
+            "Line Character",
+            "Sonic",
+            "Avengers Poster",
+            "단풍잎",
+            "SAMSUNG Galaxy S7",
+            "강아지",
+            "대한민국 지도",
+            "Brown Eyed Soul",
+            "피카츄",
+            "Avengers",
+            "흰 강아지"
     };
 
     // Array of integers points to images stored in /res/drawable-ldpi/
-    int[] images = new int[]{
+    static int[] images = new int[]{
             R.drawable.image1,
             R.drawable.image2,
-            R.drawable.image3
+            R.drawable.image3,
+            R.drawable.image4,
+            R.drawable.image5,
+            R.drawable.image6,
+            R.drawable.image7,
+//            R.drawable.image8,
+//            R.drawable.image9,
+//            R.drawable.image10,
+//            R.drawable.image11,
+//            R.drawable.image12,
+//            R.drawable.image13,
+//            R.drawable.image14,
+//            R.drawable.image15,
+//            R.drawable.image16,
+//            R.drawable.image17,
+//            R.drawable.image18
     };
+
+    private static final int PICTURE_NUM = images.length;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,31 +111,7 @@ public class Images extends Fragment {
             e.printStackTrace();
         }
 
-//        if (data != null) {
-//            try {
-//                JSONObject jsonObj = new JSONObject(data);
-//                JSONArray images = jsonObj.getJSONArray(TAG_IMAGES);
-//                for (int i = 0; i < images.length(); i++) {
-//                    JSONObject c = images.getJSONObject(i);
-//
-//                    String name = c.getString(TAG_NAME);
-//                    String image = c.getString(TAG_IMAGE);
-//
-//                    HashMap<String, Object> animage = new HashMap<String, Object>();
-//
-//                    Drawable tempimage = getResources().getDrawable(R.drawable.image1);
-//
-//                    animage.put(TAG_NAME, name);
-//                    animage.put(TAG_IMAGE, tempimage);
-//
-//                    imageList.add(animage);
-//                }
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-        for(int i=0;i<PICTURE_NUM;i++){
+        for(int i = 0 ; i < PICTURE_NUM ; i ++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put(TAG_NAME, names[i]);
             hm.put(TAG_IMAGE, Integer.toString(images[i]));
@@ -138,7 +144,7 @@ public class Images extends Fragment {
                 {
                     if(name.equals(names[i]))
                     {
-                        in.putExtra(TAG_IMAGE, images[i]);
+                        in.putExtra("num_image", i);
                         break;
                     }
                 }
