@@ -1,5 +1,6 @@
 package cs496.common_assignment_1;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.content.Intent;
 import android.os.Bundle;
@@ -63,17 +64,17 @@ public class Images extends Fragment {
             R.drawable.image5,
             R.drawable.image6,
             R.drawable.image7,
-//            R.drawable.image8,
-//            R.drawable.image9,
-//            R.drawable.image10,
-//            R.drawable.image11,
-//            R.drawable.image12,
-//            R.drawable.image13,
-//            R.drawable.image14,
-//            R.drawable.image15,
-//            R.drawable.image16,
-//            R.drawable.image17,
-//            R.drawable.image18
+            R.drawable.image8,
+            R.drawable.image9,
+            R.drawable.image10,
+            R.drawable.image11,
+            R.drawable.image12,
+            R.drawable.image13,
+            R.drawable.image14,
+            R.drawable.image15,
+            R.drawable.image16,
+            R.drawable.image17,
+            R.drawable.image18
     };
 
     private static final int PICTURE_NUM = images.length;
