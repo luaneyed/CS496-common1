@@ -24,7 +24,7 @@ public class Tabsadapter  extends FragmentStatePagerAdapter{
                 return new Images();
 
             case 2:
-                return new Random();
+                return new Calculator();
         }
 
         return null;

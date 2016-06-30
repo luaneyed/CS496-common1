@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity implements android.support.v
 
         Tab Contactstab = getSupportActionBar().newTab().setText("Contacts").setTabListener(this);
         Tab Imagestab = getSupportActionBar().newTab().setText("Images").setTabListener(this);
-        Tab Randomtab = getSupportActionBar().newTab().setText("Random").setTabListener(this);
+        Tab Randomtab = getSupportActionBar().newTab().setText("Calculator").setTabListener(this);
 
         getSupportActionBar().addTab(Contactstab);
         getSupportActionBar().addTab(Imagestab);
