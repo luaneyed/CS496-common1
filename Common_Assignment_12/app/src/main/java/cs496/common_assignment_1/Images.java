@@ -121,7 +121,7 @@ public class Images extends Fragment {
 
         gridView = (GridView) view.findViewById(R.id.grid);
 
-        SimpleAdapter adapter = new SimpleAdapter(
+        Image_NewAdapter adapter = new Image_NewAdapter(
                 getActivity(), imageList,
                 R.layout.image_small_view, new String[] { TAG_NAME, TAG_IMAGE }, new int[] { R.id.name, R.id.image});
 

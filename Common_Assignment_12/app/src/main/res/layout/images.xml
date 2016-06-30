@@ -23,8 +23,7 @@
                 android:padding="4dp"
                 android:numColumns="2"
                 android:scrollbars="vertical"
-                android:stretchMode="columnWidth"
-                android:background="@android:color/holo_purple">
+                android:stretchMode="columnWidth">
 
             </GridView>
 
