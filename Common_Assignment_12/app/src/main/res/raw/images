@@ -1,0 +1,16 @@
+{
+  "images": [
+    {
+      "name" : "image1",
+      "image" : R.drawable.image1
+    },
+    {
+      "name" : "image2",
+      "image" : "@res/drawable/image2.png"
+    },
+    {
+      "name" : "image3",
+      "image" : "@res/drawable/image3.png"
+    }
+  ]
+}

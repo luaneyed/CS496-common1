@@ -19,6 +19,11 @@
             android:label="Contact"
             android:name="cs496.common_assignment_1.PhonebookSingleContactActivity">
         </activity>
+        <activity
+            android:label="Image_FullScreen"
+            android:name="cs496.common_assignment_1.Image_FullScreen"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+        </activity>
     </application>
 
 </manifest>
