@@ -1,10 +1,13 @@
 package cs496.common_assignment_1;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.opengl.GLES20;
 import android.support.v4.view.PagerAdapter;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.view.ViewPager;
@@ -49,7 +52,14 @@ public class Image_Adapter extends PagerAdapter{
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(context.getResources(), GalImages[position], options);
         int scale = 1;
-        int minsize = 700;
+        //int[] maxTextureSize = new int[1];
+        //GLES20.glGetIntegerv(GLES20.GL_MAX_TEXTURE_SIZE, maxTextureSize, 0);
+
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        ((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int height = displaymetrics.heightPixels;
+        int width = displaymetrics.widthPixels;
+        int minsize = Math.min(height / 2 , width / 2);
         if(options.outHeight > minsize || options.outWidth > minsize)
             scale = (int)Math.pow(2, (int)Math.round(Math.log(minsize / (double)Math.max(options.outHeight, options.outWidth)) / Math.log(0.5)));
         BitmapFactory.Options o2 = new BitmapFactory.Options();
@@ -59,7 +69,7 @@ public class Image_Adapter extends PagerAdapter{
         imageView.setImageBitmap(resized);
         //imageView.setImageResource(GalImages[position] );
 
-        mAttacher = new PhotoViewAttacher(imageView);
+        //mAttacher = new PhotoViewAttacher(imageView);
         ((ViewPager) container).addView(imageView, 0);
         return imageView;
     }
