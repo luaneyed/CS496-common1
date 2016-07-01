@@ -44,7 +44,7 @@ public class Image_NewAdapter extends SimpleAdapter{
             ((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
             int height = displaymetrics.heightPixels;
             int width = displaymetrics.widthPixels;
-            int minsize = Math.min(height / 2 , width / 2);
+            int minsize = Math.min(height / 3 , width / 3);
             if(options.outHeight > minsize || options.outWidth > minsize)
                 scale = (int)Math.pow(2, (int)Math.round(Math.log(minsize / (double)Math.max(options.outHeight, options.outWidth)) / Math.log(0.5)));
             BitmapFactory.Options o2 = new BitmapFactory.Options();
